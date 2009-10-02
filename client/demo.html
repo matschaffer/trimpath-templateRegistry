@@ -4,17 +4,19 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <title>Demo for template register</title>
+    <script src="jquery-1.3.2.js" type="text/javascript" charset="utf-8"></script>
     <script src="templates.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../server/template.html.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8">
       function runThatJawn() {
-        var result = Templates.render("template.html", {name:"arpit"});
-        document.getElementById("container").innerHTML = result;
+        Templates.render("template.html",
+                         {name: "arpit"},
+                         document.getElementById("container"));
+        return false;
       }
     </script>
   </head>
   <body>
-    <a href="javascript:runThatJawn();return false;">Do it!</a>
+    <a href="#" onclick="return runThatJawn();">Do it!</a>
     Here's teh container --&gt; <div id="container"></div>
   </body>
 </html>
