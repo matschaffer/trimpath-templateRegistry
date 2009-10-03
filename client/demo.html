@@ -4,8 +4,18 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <title>Demo for template register</title>
+
+    <script src="templateRegistry.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- in prod do this, because process.js will have put all your templates into one pre-compiled file -->
+    <!-- <script src="../server/templates.html.js" type="text/javascript" charset="utf-8"></script> -->
+
+    <!-- in development do this, and it'll re-parse the template on every .render call -->
+    <script src="../server/trimpath-template-1.0.38.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../server/wrapper.js" type="text/javascript" charset="utf-8"></script>
     <script src="jquery-1.3.2.js" type="text/javascript" charset="utf-8"></script>
-    <script src="templates.js" type="text/javascript" charset="utf-8"></script>
+    <script src="templateRegistry.autoload.js" type="text/javascript" charset="utf-8"></script>
+
     <script type="text/javascript" charset="utf-8">
       function runThatJawn() {
         Templates.render("template.html",
@@ -14,6 +24,7 @@
         return false;
       }
     </script>
+
   </head>
   <body>
     <a href="#" onclick="return runThatJawn();">Do it!</a>

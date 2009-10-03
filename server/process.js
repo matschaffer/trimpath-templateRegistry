@@ -2,12 +2,9 @@
 
 load('stdlib.js');
 load('trimpath-template-1.0.38.js');
+load('wrapper.js');
 
-function wrap(templateFile) {
-  var wrapper = TrimPath.parseTemplate(readFile('wrapper.js.tpl'));
-  var template = TrimPath.parseTemplate(readFile(templateFile));
-  return wrapper.process({ name: templateFile,
-                           sourceFunc: template.sourceFunc});
-}
+// Soon we'll start iterating over a whole folder and pre-compiling all the templates down to one file
 
-writeFile(arguments[0] + '.js', wrap(arguments[0]));
+var wrapper = new Wrapper(readFile('wrapper.js.tpl'));
+writeFile('templates.html.js', wrapper.wrap(arguments[0], readFile(arguments[0])));
