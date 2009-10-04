@@ -12,4 +12,4 @@ So what's what this is. After evaluating all of the above mentioned template too
 
 It seems to be working so far at least in theory. We haven't applied this to production code yet, but hopefully we will soon. Check out client/demo.html for a rough sketch of the idea. The "client" folder is what's intended for use at run-time. The "server" folder is what's intended for use at build-time.
 
-There's still a lot of work to be done. My biggest outstanding question is how to handle the the template registration function name such that we can be pretty flexible about how/where the templates get loaded. And of course, we'll need some specs now that I actually have some rough idea of what the heck I'd doing :)
+There's still a lot of work to be done. My biggest outstanding question is how to handle the the template registration function name such that we can be pretty flexible about how/where the templates get loaded. And of course, we'll need some specs now that I actually have some rough idea of what the heck I'm doing :)
