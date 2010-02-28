@@ -17,4 +17,11 @@ TemplateRegistry.prototype = {
   }
 };
 
+TemplateRegistry.modifiers = { 
+  "eat"        : function(v)    { return ""; },
+  "escape"     : function(s)    { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); },
+  "capitalize" : function(s)    { return String(s).toUpperCase(); },
+  "default"    : function(s, d) { return s != null ? s : d; }
+};
+
 var Templates = new TemplateRegistry("../server");
